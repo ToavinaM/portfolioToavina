@@ -1,0 +1,14 @@
+# Autoriser tous les robots d'indexation
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://toavinam.github.io/portfolioToavina/sitemap.xml
+
+# Empêcher l'indexation des fichiers système
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /node_modules/
+
+# Crawl delay (optionnel)
+Crawl-delay: 1

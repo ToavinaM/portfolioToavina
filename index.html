@@ -3,9 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toavina Ranarilala | Développeur Full-Stack</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Toavina Ranarilala | Développeur Full-Stack Madagascar | React, Node.js, Java</title>
+    <meta name="description" content="Toavina Ranarilala - Développeur Full-Stack basé à Madagascar. Expert en React, Node.js, Spring Boot, et React Native. 4+ années d'expérience. Master Big Data & IA.">
+    <meta name="keywords" content="développeur full-stack, développeur web Madagascar, React développeur, Node.js, Java Spring Boot, développeur mobile, React Native, Toavina Ranarilala, freelance développeur, Big Data, Intelligence Artificielle">
+    <meta name="author" content="Toavina Ranarilala">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="French">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://toavinam.github.io/portfolioToavina/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toavinam.github.io/portfolioToavina/">
+    <meta property="og:title" content="Toavina Ranarilala | Développeur Full-Stack Madagascar">
+    <meta property="og:description" content="Développeur Full-Stack passionné avec 4+ années d'expérience. Expert React, Node.js, Spring Boot. Basé à Madagascar.">
+    <meta property="og:image" content="https://toavinam.github.io/portfolioToavina/assets/BICIbyVitou%2056WEB.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Toavina Ranarilala Portfolio">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://toavinam.github.io/portfolioToavina/">
+    <meta name="twitter:title" content="Toavina Ranarilala | Développeur Full-Stack Madagascar">
+    <meta name="twitter:description" content="Développeur Full-Stack passionné avec 4+ années d'expérience. Expert React, Node.js, Spring Boot.">
+    <meta name="twitter:image" content="https://toavinam.github.io/portfolioToavina/assets/BICIbyVitou%2056WEB.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+    
+    <!-- Fonts & Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Toavina Ranarilala Mario",
+      "alternateName": "Toavina Ranarilala",
+      "url": "https://toavinam.github.io/portfolioToavina/",
+      "image": "https://toavinam.github.io/portfolioToavina/assets/BICIbyVitou%2056WEB.jpg",
+      "jobTitle": "Développeur Full-Stack",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mahalavolona",
+        "addressCountry": "Madagascar"
+      },
+      "email": "toavinaranarilala@gmail.com",
+      "telephone": "+261344003904",
+      "sameAs": [
+        "https://www.linkedin.com/in/toavina-ranarilala-918688250/",
+        "https://github.com/ToavinaM"
+      ],
+      "knowsAbout": ["React", "Node.js", "Spring Boot", "React Native", "Java", "TypeScript", "PostgreSQL", "MongoDB", "Docker", "Big Data", "Intelligence Artificielle"],
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "ESTIA - École Supérieure des Technologies Industrielles Avancées"
+      }
+    }
+    </script>
     <style>
         :root {
             --emerald: #10b981;
@@ -1236,10 +1302,10 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="main-content">
+    <main class="main-content" role="main">
         <!-- Hero Section -->
-        <section id="home" class="bento-grid">
-            <div class="bento-card hero-main fade-in">
+        <section id="home" class="bento-grid" aria-label="Présentation">
+            <article class="bento-card hero-main fade-in">
                 <div class="hero-badge">
                     <span class="dot"></span>
                     Disponible pour de nouveaux projets
@@ -1265,7 +1331,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </article>
             <div class="bento-card hero-photo fade-in">
                 <img src="assets/BICIbyVitou 56WEB.jpg" alt="Toavina Ranarilala">
                 <div class="photo-overlay">
@@ -1300,7 +1366,7 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="bento-grid">
+        <section id="about" class="bento-grid" aria-label="À propos">
             <div class="bento-card about-card fade-in">
                 <span class="section-label"><i class="fas fa-circle"></i> À propos de moi</span>
                 <h2>Un développeur passionné par l'innovation</h2>
@@ -1351,7 +1417,7 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="bento-grid">
+        <section id="skills" class="bento-grid" aria-label="Compétences techniques">
             <div class="skills-header fade-in">
                 <div>
                     <span class="section-label"><i class="fas fa-circle"></i> Compétences</span>
@@ -1450,7 +1516,7 @@
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="bento-grid">
+        <section id="experience" class="bento-grid" aria-label="Expérience professionnelle">
             <div class="experience-header fade-in">
                 <span class="section-label"><i class="fas fa-circle"></i> Parcours</span>
                 <h2>Expérience Professionnelle</h2>
@@ -1539,7 +1605,7 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="bento-grid">
+        <section id="education" class="bento-grid" aria-label="Formation académique">
             <div class="experience-header fade-in">
                 <span class="section-label"><i class="fas fa-circle"></i> Formation</span>
                 <h2>Parcours Académique</h2>
@@ -1593,7 +1659,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="bento-grid">
+        <section id="contact" class="bento-grid" aria-label="Contact">
             <div class="experience-header fade-in">
                 <span class="section-label"><i class="fas fa-circle"></i> Contact</span>
                 <h2>Travaillons Ensemble</h2>
