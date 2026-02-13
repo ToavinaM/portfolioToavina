@@ -923,6 +923,25 @@
             margin-bottom: 1rem;
         }
 
+        .experience-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--emerald);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-link i {
+            font-size: 0.85rem;
+        }
+
+        .experience-link:hover {
+            color: var(--teal);
+        }
+
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
@@ -1639,6 +1658,10 @@
                     Application mobile de sport et bien-être pour femmes post-partum. 
                     Architecture NestJS modulaire, streaming vidéo Mux, paiements MVola.
                 </p>
+                <a class="experience-link" href="https://elsy-charles.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-link"></i>
+                    Collaboration : Portfolio d'Elsy Charles
+                </a>
                 <div class="tech-stack">
                     <span>Node.js</span>
                     <span>NestJS</span>
