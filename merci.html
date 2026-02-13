@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7STEFZHCE1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            analytics_storage: 'denied',
+            ad_storage: 'denied'
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-7STEFZHCE1');
+    </script>
     <title>Message envoyé - Toavina Ranarilala</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -152,6 +164,85 @@
             font-size: 0.9rem;
             color: #71717a;
         }
+
+        /* Cookie consent banner */
+        .cookie-banner {
+            position: fixed;
+            left: 1.5rem;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 2000;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .cookie-banner.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .cookie-banner p {
+            margin: 0;
+            color: #a1a1aa;
+            font-size: 0.95rem;
+        }
+
+        .cookie-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .cookie-actions button {
+            border: 0;
+            border-radius: 10px;
+            padding: 0.6rem 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cookie-accept {
+            background: linear-gradient(135deg, #10b981 0%, #14b8a6 50%, #06b6d4 100%);
+            color: #0a0a0a;
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+        }
+
+        .cookie-reject {
+            background: transparent;
+            color: #a1a1aa;
+            border: 1px solid rgba(113, 113, 122, 0.4);
+        }
+
+        .cookie-actions button:hover {
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 640px) {
+            .cookie-banner {
+                left: 1rem;
+                right: 1rem;
+                bottom: 1rem;
+                padding: 1rem;
+            }
+
+            .cookie-actions {
+                width: 100%;
+                justify-content: flex-end;
+            }
+        }
     </style>
 </head>
 <body>
@@ -176,6 +267,14 @@
         </div>
     </div>
 
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
+        <p>Ce site utilise Google Analytics pour mesurer l'audience. Vous pouvez accepter ou refuser.</p>
+        <div class="cookie-actions">
+            <button type="button" class="cookie-reject" id="cookie-reject">Refuser</button>
+            <button type="button" class="cookie-accept" id="cookie-accept">Accepter</button>
+        </div>
+    </div>
+
     <script>
         // Countdown et redirection automatique
         let timeLeft = 10;
@@ -196,6 +295,44 @@
             clearInterval(countdown);
             document.querySelector('.countdown').textContent = 'Redirection annulée';
         });
+
+        // Cookie consent handling for Google Analytics
+        (() => {
+            const storageKey = 'ga_consent_v1';
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const rejectBtn = document.getElementById('cookie-reject');
+
+            const applyConsent = (status) => {
+                if (typeof gtag !== 'function') {
+                    return;
+                }
+                const granted = status === 'granted';
+                gtag('consent', 'update', {
+                    analytics_storage: granted ? 'granted' : 'denied',
+                    ad_storage: 'denied'
+                });
+            };
+
+            const saved = localStorage.getItem(storageKey);
+            if (!saved) {
+                banner.classList.add('is-visible');
+            } else {
+                applyConsent(saved);
+            }
+
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem(storageKey, 'granted');
+                applyConsent('granted');
+                banner.classList.remove('is-visible');
+            });
+
+            rejectBtn.addEventListener('click', () => {
+                localStorage.setItem(storageKey, 'denied');
+                applyConsent('denied');
+                banner.classList.remove('is-visible');
+            });
+        })();
     </script>
 </body>
 </html>
