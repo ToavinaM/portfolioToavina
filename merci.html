@@ -1,339 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, follow">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7STEFZHCE1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('consent', 'default', {
-            analytics_storage: 'denied',
-            ad_storage: 'denied'
-        });
-        gtag('js', new Date());
-        gtag('config', 'G-7STEFZHCE1');
-    </script>
-    <title>Message envoyé - Toavina Ranarilala</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 100%);
-            color: #fafafa;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(20, 184, 166, 0.15) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .container {
-            max-width: 600px;
-            text-align: center;
-            background: rgba(20, 20, 20, 0.8);
-            backdrop-filter: blur(20px);
-            padding: 4rem 3rem;
-            border-radius: 24px;
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            position: relative;
-            z-index: 1;
-            animation: slideUp 0.6s ease;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .icon-wrapper {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 2rem;
-            background: linear-gradient(135deg, #10b981 0%, #14b8a6 50%, #06b6d4 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: scaleIn 0.5s ease 0.3s both;
-        }
-
-        @keyframes scaleIn {
-            from {
-                transform: scale(0);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-
-        .icon-wrapper i {
-            font-size: 3rem;
-            color: #0a0a0a;
-        }
-
-        h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #10b981 0%, #14b8a6 50%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        p {
-            font-size: 1.1rem;
-            color: #a1a1aa;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, #10b981 0%, #14b8a6 50%, #06b6d4 100%);
-            color: #0a0a0a;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.5);
-        }
-
-        .info-box {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            border-radius: 12px;
-            text-align: left;
-        }
-
-        .info-box p {
-            margin: 0;
-            font-size: 0.95rem;
-            color: #10b981;
-        }
-
-        .info-box i {
-            margin-right: 0.5rem;
-        }
-
-        .countdown {
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
-            color: #71717a;
-        }
-
-        /* Cookie consent banner */
-        .cookie-banner {
-            position: fixed;
-            left: 1.5rem;
-            right: 1.5rem;
-            bottom: 1.5rem;
-            background: rgba(20, 20, 20, 0.95);
-            border: 1px solid rgba(16, 185, 129, 0.35);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            border-radius: 16px;
-            padding: 1.25rem 1.5rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: center;
-            justify-content: space-between;
-            z-index: 2000;
-            opacity: 0;
-            transform: translateY(20px);
-            pointer-events: none;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-        }
-
-        .cookie-banner.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        .cookie-banner p {
-            margin: 0;
-            color: #a1a1aa;
-            font-size: 0.95rem;
-        }
-
-        .cookie-actions {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .cookie-actions button {
-            border: 0;
-            border-radius: 10px;
-            padding: 0.6rem 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .cookie-accept {
-            background: linear-gradient(135deg, #10b981 0%, #14b8a6 50%, #06b6d4 100%);
-            color: #0a0a0a;
-            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
-        }
-
-        .cookie-reject {
-            background: transparent;
-            color: #a1a1aa;
-            border: 1px solid rgba(113, 113, 122, 0.4);
-        }
-
-        .cookie-actions button:hover {
-            transform: translateY(-1px);
-        }
-
-        @media (max-width: 640px) {
-            .cookie-banner {
-                left: 1rem;
-                right: 1rem;
-                bottom: 1rem;
-                padding: 1rem;
-            }
-
-            .cookie-actions {
-                width: 100%;
-                justify-content: flex-end;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#08111f">
+  <title>Message envoyé | Toavina Ranarilala</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/merci.css">
 </head>
-<body>
-    <div class="container">
-        <div class="icon-wrapper">
-            <i class="fas fa-check"></i>
-        </div>
-        <h1>Message envoyé avec succès !</h1>
-        <p>
-            Merci pour votre message. Je l'ai bien reçu et je vous répondrai sous 48 heures au plus tard.
-        </p>
-        
-        <a href="index.html" class="btn">
-            <i class="fas fa-arrow-left"></i>
-            Retour au portfolio
-        </a>
-
-
-
-        <div class="countdown">
-            Redirection automatique dans <span id="timer">10</span> secondes...
-        </div>
-    </div>
-
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
-        <p>Ce site utilise Google Analytics pour mesurer l'audience. Vous pouvez accepter ou refuser.</p>
-        <div class="cookie-actions">
-            <button type="button" class="cookie-reject" id="cookie-reject">Refuser</button>
-            <button type="button" class="cookie-accept" id="cookie-accept">Accepter</button>
-        </div>
-    </div>
-
-    <script>
-        // Countdown et redirection automatique
-        let timeLeft = 10;
-        const timerElement = document.getElementById('timer');
-        
-        const countdown = setInterval(() => {
-            timeLeft--;
-            timerElement.textContent = timeLeft;
-            
-            if (timeLeft <= 0) {
-                clearInterval(countdown);
-                window.location.href = 'index.html';
-            }
-        }, 1000);
-
-        // Permettre d'annuler la redirection en cliquant sur la page
-        document.addEventListener('click', () => {
-            clearInterval(countdown);
-            document.querySelector('.countdown').textContent = 'Redirection annulée';
-        });
-
-        // Cookie consent handling for Google Analytics
-        (() => {
-            const storageKey = 'ga_consent_v1';
-            const banner = document.getElementById('cookie-banner');
-            const acceptBtn = document.getElementById('cookie-accept');
-            const rejectBtn = document.getElementById('cookie-reject');
-
-            const applyConsent = (status) => {
-                if (typeof gtag !== 'function') {
-                    return;
-                }
-                const granted = status === 'granted';
-                gtag('consent', 'update', {
-                    analytics_storage: granted ? 'granted' : 'denied',
-                    ad_storage: 'denied'
-                });
-            };
-
-            const saved = localStorage.getItem(storageKey);
-            if (!saved) {
-                banner.classList.add('is-visible');
-            } else {
-                applyConsent(saved);
-            }
-
-            acceptBtn.addEventListener('click', () => {
-                localStorage.setItem(storageKey, 'granted');
-                applyConsent('granted');
-                banner.classList.remove('is-visible');
-            });
-
-            rejectBtn.addEventListener('click', () => {
-                localStorage.setItem(storageKey, 'denied');
-                applyConsent('denied');
-                banner.classList.remove('is-visible');
-            });
-        })();
-    </script>
+<body class="thanks-page">
+  <header class="thanks-header shell">
+    <a class="brand" href="index.html" aria-label="Retour au portfolio"><span class="brand-mark">TR</span><span class="brand-name">Toavina<br>Ranarilala</span></a>
+    <span>Message envoyé</span>
+  </header>
+  <main class="thanks-main shell">
+    <section class="thanks-card" aria-labelledby="thanks-title">
+      <div class="thanks-visual" aria-hidden="true"><span class="thanks-ring ring-one"></span><span class="thanks-ring ring-two"></span><div class="thanks-check"><span></span></div></div>
+      <p class="eyebrow"><span></span> Transmission réussie</p>
+      <h1 id="thanks-title">Merci, votre message est bien arrivé.</h1>
+      <p class="thanks-intro">Je reviens vers vous dans les meilleurs délais. En attendant, vous pouvez poursuivre votre visite ou consulter mon parcours complet.</p>
+      <div class="thanks-actions"><a class="button primary" href="index.html">Retour au portfolio <span aria-hidden="true">→</span></a><a class="button secondary" href="assets/CV_Toavina_Ranarilala_ATS_Lisible.docx.pdf" target="_blank" rel="noopener">Voir mon CV <span aria-hidden="true">↗</span></a></div>
+      <p class="thanks-countdown">Retour automatique dans <strong id="timer">12</strong> secondes</p>
+      <div class="thanks-progress" aria-hidden="true"><span></span></div>
+    </section>
+  </main>
+  <footer class="thanks-footer shell"><span>© 2026 Toavina Ranarilala</span><span>Antananarivo, Madagascar</span></footer>
+  <script>
+    let seconds = 12;
+    const timer = document.getElementById('timer');
+    const interval = window.setInterval(() => {
+      seconds -= 1; timer.textContent = seconds;
+      if (seconds <= 0) { window.clearInterval(interval); window.location.href = 'index.html'; }
+    }, 1000);
+  </script>
 </body>
 </html>

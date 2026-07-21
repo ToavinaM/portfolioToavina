@@ -15,6 +15,7 @@
 .reveal{opacity:1;transform:none}
 @media(prefers-reduced-motion:no-preference){.js .reveal{opacity:0;transform:translateY(25px);transition:opacity .75s ease,transform .75s ease}.js .reveal.visible{opacity:1;transform:none}}
 .portrait-frame picture{display:contents}
+.contact-form button:disabled{cursor:wait;opacity:.72}.button-spinner{width:17px;height:17px;border:2px solid rgba(8,17,31,.25);border-top-color:var(--ink);border-radius:50%;animation:button-spin .7s linear infinite}@keyframes button-spin{to{transform:rotate(360deg)}}
 html,body{width:100%;max-width:100%;overflow-x:hidden;overflow-x:clip}
 .trust-strip{width:100%;max-width:100%;transform:none}
 .portrait-label{top:72px;left:auto;right:34px;width:250px;max-width:calc(100% - 48px);padding:.5rem .8rem;border:1px solid rgba(255,255,255,.35);border-radius:4px;clip-path:polygon(6% 0,100% 0,94% 100%,0 100%);background:linear-gradient(90deg,rgba(24,90,219,.9),rgba(75,44,220,.95));box-shadow:0 10px 30px rgba(24,90,219,.2);text-align:center;white-space:nowrap;transform:rotate(23deg)}
