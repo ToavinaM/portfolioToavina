@@ -20,3 +20,8 @@ html,body{width:100%;max-width:100%;overflow-x:hidden;overflow-x:clip}
 .trust-strip{width:100%;max-width:100%;transform:none}
 .portrait-label{top:72px;left:auto;right:34px;width:250px;max-width:calc(100% - 48px);padding:.5rem .8rem;border:1px solid rgba(255,255,255,.35);border-radius:4px;clip-path:polygon(6% 0,100% 0,94% 100%,0 100%);background:linear-gradient(90deg,rgba(24,90,219,.9),rgba(75,44,220,.95));box-shadow:0 10px 30px rgba(24,90,219,.2);text-align:center;white-space:nowrap;transform:rotate(23deg)}
 @media(max-width:650px){.portrait-label{top:58px;right:22px;width:220px;font-size:.56rem;transform:rotate(21deg)}}
+.brand-logo{display:block;width:42px;height:42px;flex:0 0 42px;object-fit:contain;border-radius:50%;transform:scale(1.45) translateY(-1px);transform-origin:center}
+.expertise-card.featured{padding-top:7.5rem;overflow:hidden}
+.featured .card-icon{z-index:2}
+@media(max-width:950px){.expertise-card.featured{min-height:430px}}
+@media(max-width:650px){.expertise-card.featured{min-height:0;padding-top:7rem}}
