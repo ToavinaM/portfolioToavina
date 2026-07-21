@@ -16,3 +16,6 @@ Thumbs.db
 # Dépendances (si vous ajoutez Node.js plus tard)
 node_modules/
 package-lock.json
+
+# Sources de CV non publiées
+assets/*.docx
