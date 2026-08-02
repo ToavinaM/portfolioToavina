@@ -16,7 +16,7 @@
 </head>
 <body class="thanks-page">
   <header class="thanks-header shell">
-    <a class="brand" href="index.html" aria-label="Retour au portfolio"><span class="brand-mark">TR</span><span class="brand-name">Toavina<br>Ranarilala</span></a>
+    <a class="brand" href="index.html" aria-label="Retour au portfolio"><img class="brand-logo" src="assets/SOLID_SANS_TXT.png" width="42" height="42" alt=""><span class="brand-name">Toavina<br>Ranarilala</span></a>
     <span>Message envoyé</span>
   </header>
   <main class="thanks-main shell">
@@ -26,18 +26,25 @@
       <h1 id="thanks-title">Merci, votre message est bien arrivé.</h1>
       <p class="thanks-intro">Je reviens vers vous dans les meilleurs délais. En attendant, vous pouvez poursuivre votre visite ou consulter mon parcours complet.</p>
       <div class="thanks-actions"><a class="button primary" href="index.html">Retour au portfolio <span aria-hidden="true">→</span></a><a class="button secondary" href="assets/CV_Toavina_Ranarilala_ATS_Lisible.docx.pdf" target="_blank" rel="noopener">Voir mon CV <span aria-hidden="true">↗</span></a></div>
-      <p class="thanks-countdown">Retour automatique dans <strong id="timer">12</strong> secondes</p>
-      <div class="thanks-progress" aria-hidden="true"><span></span></div>
+      <div class="thanks-countdown" id="countdown-wrap"><p class="thanks-countdown">Retour automatique dans <strong id="timer">20</strong> secondes — <button type="button" class="thanks-stay" id="stay">rester sur cette page</button></p><div class="thanks-progress" aria-hidden="true"><span></span></div><p class="thanks-stay-note" id="stay-note" hidden>Parfait, vous restez ici. Revenez quand vous voulez.</p></div>
     </section>
   </main>
   <footer class="thanks-footer shell"><span>© 2026 Toavina Ranarilala</span><span>Antananarivo, Madagascar</span></footer>
   <script>
-    let seconds = 12;
+    let seconds = 20;
     const timer = document.getElementById('timer');
+    const stay = document.getElementById('stay');
+    const countdown = document.getElementById('countdown-wrap');
+    const stayNote = document.getElementById('stay-note');
     const interval = window.setInterval(() => {
       seconds -= 1; timer.textContent = seconds;
       if (seconds <= 0) { window.clearInterval(interval); window.location.href = 'index.html'; }
     }, 1000);
+    stay.addEventListener('click', () => {
+      window.clearInterval(interval);
+      countdown.hidden = true;
+      stayNote.hidden = false;
+    });
   </script>
 </body>
 </html>

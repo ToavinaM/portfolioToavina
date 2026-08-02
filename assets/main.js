@@ -17,25 +17,48 @@ navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', ()
   navLinks.classList.remove('open');
 }));
 
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
-  document.querySelectorAll('.reveal').forEach(element => element.classList.add('visible'));
-} else {
-  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  }), { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+if (window.AOS) {
+  AOS.init({
+    duration: 700,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 90,
+    disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  });
 }
 
 const form = document.getElementById('contactForm');
 const redirect = document.getElementById('redirectUrl');
 redirect.value = new URL('merci.html', window.location.href).href;
 
-form.addEventListener('submit', () => {
-  const submitButton = form.querySelector('button[type="submit"]');
-  submitButton.innerHTML = '<span class="button-spinner" aria-hidden="true"></span> Ouverture du CAPTCHA…';
+const status = document.getElementById('form-status');
+const submitButton = form.querySelector('button[type="submit"]');
+const originalLabel = submitButton.innerHTML;
+let submitting = false;
+
+function setStatus(message, type) {
+  status.textContent = message;
+  status.className = 'form-status' + (type ? ' ' + type : '');
+}
+
+form.addEventListener('submit', (event) => {
+  if (submitting) { event.preventDefault(); return; }
+  if (!navigator.onLine) {
+    event.preventDefault();
+    setStatus('Vous semblez hors ligne. Vérifiez votre connexion puis réessayez.', 'error');
+    return;
+  }
+  submitting = true;
+  submitButton.disabled = true;
+  submitButton.innerHTML = '<span class="button-spinner" aria-hidden="true"></span> Envoi en cours…';
+  setStatus('Envoi en cours — vérification anti-spam…');
+  window.setTimeout(() => {
+    if (document.hidden) return;
+    submitting = false;
+    submitButton.disabled = false;
+    submitButton.innerHTML = originalLabel;
+    setStatus("L’envoi semble bloqué (vérification anti-spam ?). Contrôlez votre connexion puis réessayez.", 'error');
+  }, 25000);
 });
 
 const banner = document.getElementById('cookie-banner');
